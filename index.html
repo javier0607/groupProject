@@ -1,80 +1,79 @@
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
-</head>
-<body>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css"
+    />
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <script src="./assets/js/script.js"></script>
+  </head>
+  <body>
     <header>
-        
-        <section class="hero is-info is-medium">
-            <!-- Hero head: will stick at the top -->
-            <div class="hero-head">
-                <nav class="navbar">
-                    <div class="container">
-                        <div class="navbar-brand">
-                            
-                            <h1 class="is-size-3">Whether Or Not</h1>
-                            <span class="navbar-burger" data-target="navbarMenuHeroA">
-                                <span></span>
-                                <span></span>
-                                <span></span>
-                            </span>
-                        </div>
-                        <div id="navbarMenuHeroA" class="navbar-menu">
-                            <div class="navbar-end">
-                                
-                                <a class="navbar-item">
-                                    Activities
-                                </a>
-                                <a class="navbar-item">
-                                    Restaurant
-                                </a>
-                                <div class="field is-grouped">
-                                    <p class="control is-expanded mt-1">
-                                        <input class="input" type="text" placeholder="Find your next Activity!">
-                                    </p>
-                                    <p class="control">
-                                        <a class="button mt-1">
-                                            Search
-                                        </a>
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </nav>
-            </div>
-        
-            <!-- Hero content: will be in the middle -->
-            <!--Slide show goes here-->
-            <div class="hero-body">
-                <div class="container has-text-centered">
-                    <p class="title">
-                        
+      <section class="hero is-info is-medium">
+        <!-- Hero head: will stick at the top -->
+        <div class="hero-head">
+          <nav class="navbar">
+            <div class="container">
+              <div class="navbar-brand">
+                <h1 class="is-size-3">Whether Or Not</h1>
+                <span class="navbar-burger" data-target="navbarMenuHeroA">
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                </span>
+              </div>
+              <div id="navbarMenuHeroA" class="navbar-menu">
+                <div class="navbar-end">
+                  <a class="navbar-item"> Activities </a>
+                  <a class="navbar-item"> Restaurant </a>
+                  <div class="field is-grouped">
+                    <p class="control is-expanded mt-1">
+                      <input
+                        class="input"
+                        type="text"
+                        placeholder="Find your next Activity!"
+                      />
                     </p>
-                    
+                    <p class="control">
+                      <a class="button mt-1" id="search-button"> Search </a>
+                    </p>
+                  </div>
                 </div>
+              </div>
             </div>
+          </nav>
+        </div>
+
+        <!-- Hero content: will be in the middle -->
+        <!--Slide show goes here-->
+        <div class="hero-body">
+          <div class="container has-text-centered">
+            <p class="title"></p>
+          </div>
+        </div>
+
         
-            
-            
-        </section>
+      </section>
     </header>
-    
-</body>
-=======
- 
-   
-
-<footer class="footer">
-    <div class="content has-text-centered">
-
-        <p> 
-            Our first group project by <strong>Javier, Rodney, and Emerson </strong>
+    <div id="map"></div>
+    <footer class="footer">
+      <div class="content has-text-centered">
+        <p>
+          Our first group project by
+          <strong>Javier, Rodney, and Emerson </strong>
         </p>
-    </div>
-  </footer>
+      </div>
+    </footer>
+
+    <script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBvxr4SKa7DZxWJ8bz5mDQ8YAwvbn5C8Cw&callback=initMap&v=weekly"
+      async
+    ></script>
+
+    
+  </body>
 </html>
