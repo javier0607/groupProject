@@ -1,13 +1,3 @@
-// var searchButton = document.getElementById('search-button')
-
-// function getApi() {
-// 	var url = 'https://maps.googleapis.com/maps/api/place/details/output?parameters';
-
-// 	fetch(url)
-// .then(function (response) {
-// 	return response.json();
-//   })
-// }
 
 
 let map;
