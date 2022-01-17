@@ -15,11 +15,13 @@ function buttonClicked() {
 
     // Looks too see what the user wrote down and stores it.
     userInputed = document.querySelector("#userInput").value;
+    console.log(userInputed)
+
     //document.getElementById("map").innerHTML ="";
   
     //initMap(lat, long)
     deleteMarkers();
-    console.log(userInputed)
+   
     getTrails(lat, long)
   
   }
@@ -29,6 +31,7 @@ function buttonClicked() {
 function getLocation() {
   if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(showPosition);
+    
   } else {
     console.log("Geolocation is not supported by this browser.");
   }
@@ -82,7 +85,9 @@ const getTrails = (lat, long,) => {
           // icon: hiker, //If you add a custom icon you can add that here
           title: place.name,
           
+          
         });
+        
         markers.push(marker)
 
       });
@@ -117,4 +122,7 @@ function deleteMarkers() {
 // Is listening to see when the button is clicked 
 pressed.addEventListener("click", buttonClicked)
 
-  
+
+// Testing
+
+
