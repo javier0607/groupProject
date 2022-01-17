@@ -1,29 +1,30 @@
+// Searches for the button with the ID Searching
 var pressed = document.getElementById("searching")
 
-
+// Global Variables to be able to use later
 var userInputed = "";
 var lat
 var long
 var url = `https://floating-headland-95050.herokuapp.com/https://maps.googleapis.com/maps/api/place/nearbysearch/json?key=AIzaSyCOYW44XORsf-nBZKXvYwZ8VPxDIgq8X7w`
 
+// Creates a empty a array named markers
 let markers = [];
 
 // What hapopens when the button is clicked 
 function buttonClicked() {
 
-  // Looks too see what the user wrote down and stores it.
-  userInputed = document.querySelector("#userInput").value;
-  //document.getElementById("map").innerHTML ="";
+    // Looks too see what the user wrote down and stores it.
+    userInputed = document.querySelector("#userInput").value;
+    //document.getElementById("map").innerHTML ="";
+  
+    //initMap(lat, long)
+    deleteMarkers();
+    console.log(userInputed)
+    getTrails(lat, long)
+  
+  }
 
-  //initMap(lat, long)
-  deleteMarkers();
-  console.log(userInputed)
-  getTrails(lat, long)
-
-}
-
-
-let map;
+  let map;
 
 function getLocation() {
   if (navigator.geolocation) {
@@ -84,15 +85,6 @@ const getTrails = (lat, long,) => {
         });
         markers.push(marker)
 
-        // Testing here
-
-        var tag = document.createElement("p");
-     var text = document.createTextNode(place.name);
-   tag.appendChild(text);
-   var element = document.getElementById("new");
-   element.appendChild(tag);
-
-        // End testing here
       });
 
     })
@@ -121,4 +113,8 @@ function deleteMarkers() {
   markers = [];
 }
 
+
+// Is listening to see when the button is clicked 
 pressed.addEventListener("click", buttonClicked)
+
+  
