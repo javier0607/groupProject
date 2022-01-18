@@ -6,13 +6,13 @@ var userInputed = "";
 var lat
 var long
 var url = `https://floating-headland-95050.herokuapp.com/https://maps.googleapis.com/maps/api/place/nearbysearch/json?key=AIzaSyCOYW44XORsf-nBZKXvYwZ8VPxDIgq8X7w`
-
+var element
 // Creates a empty a array named markers
 let markers = [];
 
 // What hapopens when the button is clicked 
 function buttonClicked() {
-
+   
     // Looks too see what the user wrote down and stores it.
     userInputed = document.querySelector("#userInput").value;
     console.log(userInputed)
@@ -73,6 +73,7 @@ const getTrails = (lat, long,) => {
       google.maps.event.trigger(map, 'resize');
       console.log(data)
 
+      clear()
 
 
       //map over this data and create markers on the map
@@ -88,13 +89,27 @@ const getTrails = (lat, long,) => {
           
         });
         
+        var tag = document.createElement("p");
+   var text = document.createTextNode(place.name);
+   tag.appendChild(text);
+    element = document.getElementById("new");
+   element.appendChild(tag)
+
         markers.push(marker)
 
+        
       });
+
 
     })
     .catch(err => console.log(err))
+
 }
+
+function clear(){
+  document.getElementById("new").innerHTML = ""
+}
+
 
 function setMapOnAll(map) {
   for (let i = 0; i < markers.length; i++) {
