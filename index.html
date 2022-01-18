@@ -1,280 +1,289 @@
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Activities</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css"
+    />
     <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
     <link rel="stylesheet" type="text/css" href="./assets/css/test.css" />
+  </head>
+  <body>
+    <!-- header-->
+    <section class="hero is-small is-info">
+      <div class="hero-body">
+        <p class="title" style="float: right; padding-left: 50px"></p>
+        <h1 style="font-size: 40px">Whether or Not</h1>
 
-</head>
-<body>
-   <!-- header-->
-<section class="hero is-small is-info">
-    <div class="hero-body">
-        <p class="title" style="float: right; padding-left: 50px;">
-            
-        </p>
-        <h1 style="font-size: 40px;">Whether or Not</h1>
-        
-       
         <div class="field is-grouped">
-            <p class="control is-expanded mt-1">
-                <input id = "userInput" class = "input" type="text"  placeholder="What would you like to do?">
-            </p>
-            <p class="control">
-                <a id = "searching" class="button mt-1" >
-                    Search
-                </a>
-            </p>
+          <p class="control is-expanded mt-1">
+            <input
+              id="userInput"
+              class="input"
+              type="text"
+              placeholder="What would you like to do?"
+            />
+          </p>
+          <p class="control">
+            <a id="searching" class="button mt-1"> Search </a>
+          </p>
         </div>
-    </div>
-</section>
+      </div>
+    </section>
 
+    <br />
 
-<div id="map" ></div>
-<br>
-<!-- weather data -->
-<h2>Weather</h2>
-<div class="row align-items-center py-2">
-    <div class="input-group col-sm">
-      <span class="input-group-text" id="basic-addon1">Lat</span>
-      <input
-        type="text"
-        class="form-control"
-        inputmode="numeric"
-        id="latitude"
-        placeholder="latitude"
-        aria-label="latitude"
-        aria-describedby="basic-addon1"
-        value="42.98"
-      />
-    </div>
-    <div class="input-group col-sm">
-      <span class="input-group-text" id="basic-addon1">Lon</span>
-      <input
-        type="text"
-        class="form-control"
-        inputmode="numeric"
-        id="longitude"
-        placeholder="longitude"
-        aria-label="longitude"
-        aria-describedby="basic-addon1"
-        value="-81.23"
-      />
-    </div>
-<div class="col-auto me-auto">
-    <button id="btnGet" type="button" class="btn btn-primary mb-3">
-      Get Weather
-    </button>
-    <button id="btnCurrent" type="button" class="btn btn-primary mb-3">
-      Use Current Location
-    </button>
-  </div>
-<!-- results for weather data -->
-<div class="weather row gx-2">
-  <div class="col">
-    <div class="card" style="width: 30vw">
-      <h5 class="card-title p-2">Date</h5>
-      <img
-        src="http://openweathermap.org/img/wn/10d@4x.png"
-        class="card-img-top"
-        alt="Weather description"
-      />
-      <div class="card-body">
-        <h3 class="card-title">Weather Label</h3>
-        <p class="card-text">High Temp Low Temp</p>
-        <p class="card-text">HighFeels like</p>
-        
-        <p class="card-text">Sunrise</p>
-        <p class="card-text">Sunset</p>
+    <!--Columns for map-->
+    <div class="columns" style="height: 520px; margin: 10px">
+      <div class="column" style="overflow: scroll">
+        <div id="map" style="width: 50%; float: right"></div>
+       
+        <div id="new"></div>
+      </div>
+      <div class="column" style="overflow: scroll">
+        <h2>Weather</h2>
+        <div>
+          <span class="input-group-text" id="basic-addon1">Lat</span>
+          <input
+            type="text"
+            class="form-control"
+            inputmode="numeric"
+            id="latitude"
+            placeholder="latitude"
+            aria-label="latitude"
+            aria-describedby="basic-addon1"
+            value="42.98"
+          />
+        </div>
+        <div>
+          <span class="input-group-text" id="basic-addon1">Lon</span>
+          <input
+            type="text"
+            class="form-control"
+            inputmode="numeric"
+            id="longitude"
+            placeholder="longitude"
+            aria-label="longitude"
+            aria-describedby="basic-addon1"
+            value="-81.23"
+          />
+        </div>
+        <div>
+          <button id="btnGet" type="button">Get Weather</button>
+          <button id="btnCurrent" type="button">Use Current Location</button>
+        </div>
+
+        <div class="weather row gx-2">
+          <div class="col">
+            <div class="card" style="width: 30vw">
+              <h5 class="card-title p-2">Date</h5>
+              <img
+                src="http://openweathermap.org/img/wn/10d@4x.png"
+                class="card-img-top"
+                alt="Weather description"
+              />
+              <div class="card-body">
+                <h3 class="card-title">Weather Label</h3>
+                <p class="card-text">High Temp Low Temp</p>
+                <p class="card-text">HighFeels like</p>
+
+                <p class="card-text">Sunrise</p>
+                <p class="card-text">Sunset</p>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
-  </div>
-</div>
-</main>
-<footer class="container">
-<div class="row align-items-center">
-  <div class="col">
-    
 
-<!--Columns for map-->
-<div class="columns" style="height: 520px; margin: 10px;">
-    <div class="column " style="overflow: scroll;">
-        <div id="map" style="width: 50%; float: right;"></div>
-        <p style="width: 50%;">Map Context</p>
-    </div>
-    <div class="column" style="overflow: scroll;">
-        Second column
-    </div>
-    
-</div>
+    <br />
 
-
-<!-- <br> -->
-
-<div class="columns" style="margin: 10px;">
-    <div class="column">
+    <div class="columns" style="margin: 10px">
+      <div class="column">
         <!--First Card-->
         <div class="card">
-            <div class="card-image">
-                <figure class="image is-4by3">
-                    <img src="./assets/images/restaurantImage.jpeg" alt="Placeholder image">
+          <div class="card-image">
+            <figure class="image is-4by3">
+              <img
+                src="./assets/images/restaurantImage.jpeg"
+                alt="Restaurant image"
+              />
+            </figure>
+          </div>
+          <div class="card-content">
+            <div class="media">
+              <div class="media-left">
+                <figure class="image is-48x48">
+                  <img
+                    src="./assets/images/iconrestaurantproject.jpeg"
+                    alt="Restaurant icon"
+                  />
                 </figure>
+              </div>
+              <div class="media-content">
+                <p class="title is-4">Restaurants</p>
+              </div>
             </div>
-            <div class="card-content">
-                <div class="media">
-                    <div class="media-left">
-                        <figure class="image is-48x48">
-                            <img src="https://bulma.io/images/placeholders/96x96.png" alt="Placeholder image">
-                        </figure>
-                    </div>
-                    <div class="media-content">
-                        <p class="title is-4">Restaurants</p>
-                    </div>
-                </div>
-        
-                <div class="content">
-                    Feeling hungry but just can not decide where you want to eat? Click me 
-                    to see the local restaurants around your area to satisfy that hunger!
-                </div>
+
+            <div class="content">
+              Feeling hungry but just can not decide where you want to eat?
+              Click me to see the local restaurants around your area to satisfy
+              that hunger!
             </div>
+          </div>
         </div>
-    </div>
-    <div class="column">
+      </div>
+      <div class="column">
         <!--Second Card-->
         <div class="card">
-            <div class="card-image">
-                <figure class="image is-4by3">
-                    <img src="./assets/images/mallImage.jpeg" alt="Placeholder image">
+          <div class="card-image">
+            <figure class="image is-4by3">
+              <img src="./assets/images/mallImage.jpeg" alt="Mall image" />
+            </figure>
+          </div>
+          <div class="card-content">
+            <div class="media">
+              <div class="media-left">
+                <figure class="image is-48x48">
+                  <img
+                    src="./assets/images/iconmallsproject.jpeg"
+                    alt="Mall icon"
+                  />
                 </figure>
-            </div> 
-            <div class="card-content">
-                <div class="media">
-                    <div class="media-left">
-                        <figure class="image is-48x48">
-                            <img src="https://bulma.io/images/placeholders/96x96.png" alt="Placeholder image">
-                        </figure>
-                    </div>
-                    <div class="media-content">
-                        <p class="title is-4">Malls</p>
-                    </div>
-                </div>
-        
-                <div class="content">
-                    Have you seen your wardrobe recently and thought I need something new?
-                    Well have a look around and see various options of different malls to go to
-                    and you might even find a new mall you never knew existed!
-                </div>
+              </div>
+              <div class="media-content">
+                <p class="title is-4">Malls</p>
+              </div>
             </div>
+
+            <div class="content">
+              Have you seen your wardrobe recently and thought I need something
+              new? Well have a look around and see various options of different
+              malls to go to and you might even find a new mall you never knew
+              existed!
+            </div>
+          </div>
         </div>
-    </div>
-    <div class="column">
+      </div>
+      <div class="column">
         <!--Third Card-->
         <div class="card">
-            <div class="card-image">
-                <figure class="image is-4by3">
-                    <img src="./assets/images/parkImage.jpeg" alt="Placeholder image">
+          <div class="card-image">
+            <figure class="image is-4by3">
+              <img src="./assets/images/parkImage.jpeg" alt="Park image" />
+            </figure>
+          </div>
+          <div class="card-content">
+            <div class="media">
+              <div class="media-left">
+                <figure class="image is-48x48">
+                  <img
+                    src="./assets/images/iconparksproject.jpeg"
+                    alt="Park icon"
+                  />
                 </figure>
+              </div>
+              <div class="media-content">
+                <p class="title is-4">Parks</p>
+              </div>
             </div>
-            <div class="card-content">
-                <div class="media">
-                    <div class="media-left">
-                        <figure class="image is-48x48">
-                            <img src="./assets/images/parkImage.jpeg" alt="Placeholder image">
-                        </figure>
-                    </div>
-                    <div class="media-content">
-                        <p class="title is-4">Parks</p>
-                    </div>
-                </div>
-        
-                <div class="content">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    Phasellus nec iaculis mauris. <a>@bulmaio</a>.
-                    <a href="#">#css</a> <a href="#">#responsive</a>
-                    <br>
-                    <time datetime="2016-1-1">11:09 PM - 1 Jan 2016</time>
-                </div>
+
+            <div class="content">
+              <p>
+                Feeling like you want to be active today as a new years
+                resolution or just want to go take your nephew or kids out to
+                play? Well here are some local parks to go out and enjoy the
+                scenery of your area!
+              </p>
             </div>
+          </div>
         </div>
-    </div>
-    <div class="column">
+      </div>
+      <div class="column">
         <!--Fourth Card-->
         <div class="card">
-            <div class="card-image">
-                <figure class="image is-4by3">
-                    <img src="./assets/images/movieImage.jpeg" alt="Placeholder image">
+          <div class="card-image">
+            <figure class="image is-4by3">
+              <img src="./assets/images/movieImage.jpeg" alt="Movies image" />
+            </figure>
+          </div>
+          <div class="card-content">
+            <div class="media">
+              <div class="media-left">
+                <figure class="image is-48x48">
+                  <img
+                    src="./assets/images/iconmovieproject.jpeg"
+                    alt="Movie icon"
+                  />
                 </figure>
+              </div>
+              <div class="media-content">
+                <p class="title is-4">Movies</p>
+              </div>
             </div>
-            <div class="card-content">
-                <div class="media">
-                    <div class="media-left">
-                        <figure class="image is-48x48">
-                            <img src="./assets/images/movieImage.jpeg" alt="Placeholder image">
-                        </figure>
-                    </div>
-                    <div class="media-content">
-                        <p class="title is-4">Movies</p>
-                    </div>
-                </div>
-        
-                <div class="content">
-                    Feeling bored with netflix or any other streaming service you use? Want to 
-                    see the newest spiderman or matrix? Click me to see some movie theaters near you!
-                </div>
+
+            <div class="content">
+              Feeling bored with netflix or any other streaming service you use?
+              Want to see the newest spiderman or matrix? Click me to see some
+              movie theaters near you!
             </div>
+          </div>
         </div>
-    </div>
-    <div class="column">
+      </div>
+      <div class="column">
         <!--Fifth Card-->
         <div class="card">
-            <div class="card-image">
-                <figure class="image is-4by3">
-                    <img src="./assets/images/barImage.jpeg" alt="Bar image">
+          <div class="card-image">
+            <figure class="image is-4by3">
+              <img src="./assets/images/barImage.jpeg" alt="Bar image" />
+            </figure>
+          </div>
+          <div class="card-content">
+            <div class="media">
+              <div class="media-left">
+                <figure class="image is-48x48">
+                  <img
+                    src="./assets/images/iconbarsproject.jpeg"
+                    alt="Bar icon"
+                  />
                 </figure>
+              </div>
+              <div class="media-content">
+                <p class="title is-4">Bars</p>
+              </div>
             </div>
-            <div class="card-content">
-                <div class="media">
-                    <div class="media-left">
-                        <figure class="image is-48x48">
-                            <img src="./assets/images/barImage.jpeg" alt="Bar Image">
-                        </figure>
-                    </div>
-                    <div class="media-content">
-                        <p class="title is-4">Bars</p>
-                    </div>
-                </div>
-        
-                <div class="content">
-                    Have you just turned 21 or want to go to somewhere new with your bestfriend alcohol?
-                    Well I have just the places for you, bars from all around you area for you to try
-                    with your friends or find new people to mingle! 
-                </div>
+
+            <div class="content">
+              Have you just turned 21 or want to go to somewhere new with your
+              bestfriend alcohol? Well I have just the places for you, bars from
+              all around you area for you to try with your friends or find new
+              people to mingle!
             </div>
+          </div>
         </div>
+      </div>
     </div>
-</div>
 
-
-
-<footer class="footer">
-    <div class="content has-text-centered">
+    <footer class="footer">
+      <div class="content has-text-centered">
         <p>
-            Our first group project by <strong>Javier, Rodney, and Emerson </strong>
+          Our first group project by
+          <strong>Javier, Rodney, and Emerson </strong>
         </p>
-    </div>
-</footer>
+      </div>
+    </footer>
 
-<!-- Async script executes immediately and must be after any DOM elements used in callback. -->
-<script async defer
-src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCOYW44XORsf-nBZKXvYwZ8VPxDIgq8X7w&libraries=places&v=weekly">
-</script>
+    <!-- Async script executes immediately and must be after any DOM elements used in callback. -->
+    <script
+      async
+      defer
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCOYW44XORsf-nBZKXvYwZ8VPxDIgq8X7w&libraries=places&v=weekly"
+    ></script>
 
-<!-- links the page to script-->
-<script src="./assets/js/apiScript.js"></script>
-
-</body>
+    <!-- links the page to script-->
+    <script src="./assets/js/apiScript.js"></script>
+  </body>
 </html>
-
